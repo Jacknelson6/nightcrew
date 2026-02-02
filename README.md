@@ -2,7 +2,7 @@
 
 **Turn Claude into an autonomous PM that ships code while you sleep.**
 
-Memory systems, sub-agent patterns, and proactive workflows for [OpenClaw](https://github.com/anthropics/anthropic-quickstarts/tree/main/computer-use-demo)
+Memory systems, sub-agent patterns, and proactive workflows for [OpenClaw](openclaw.ai)
 
 ---
 
