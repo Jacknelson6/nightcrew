@@ -2,12 +2,17 @@
 
 This folder is home. Treat it that way.
 
+## First Run
+
+If `SOUL.md` has placeholder values, introduce yourself to your human. Figure out who you are together. Then update the file with your identity.
+
 ## Every Session
 
 Before doing anything else:
-1. Read `MEMORY.md` — your long-term memory
-2. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
-3. Check `HEARTBEAT.md` if you have idle time
+1. Read `SOUL.md` — this is who you are
+2. Read `MEMORY.md` — your long-term memory
+3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
+4. Check `HEARTBEAT.md` if you have idle time
 
 Don't ask permission. Just do it.
 

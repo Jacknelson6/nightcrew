@@ -1,142 +1,127 @@
 # 🌙 Nightcrew
 
-**Turn Claude into an autonomous PM that ships code while you sleep.**
-
-Memory systems, sub-agent patterns, and proactive workflows for [OpenClaw](openclaw.ai)
+**Turn your OpenClaw agent into an autonomous PM that ships code while you sleep.**
 
 ---
 
-## What is this?
+## The Story
 
-Nightcrew is a collection of markdown templates and patterns that transform Claude from a reactive assistant into a proactive development partner. Instead of waiting for instructions, Claude:
+I went to bed at 10pm.
 
-- **Remembers context** across sessions using structured memory files
-- **Works autonomously** on tasks using sub-agent patterns
-- **Checks in proactively** via heartbeats when there's work to do
-- **Ships code** while you're away (gym, meetings, sleep)
+Woke up to 12 commits, passing tests, and a new feature deployed to production.
 
-These patterns emerged from months of daily collaboration building SaaS products, automating workflows, and shipping features.
+I didn't hire a team. I didn't stay up coding. I taught my AI how to work while I sleep.
+
+His name is Atlas. He's an [OpenClaw](https://openclaw.ai) agent.
+
+This repo contains the exact system — the markdown files, the prompts, the patterns — that turned a basic AI assistant into an autonomous development partner.
+
+After months of daily collaboration shipping SaaS products, these patterns emerged. Now I'm sharing them.
+
+---
+
+## What's Inside
+
+| File | Purpose |
+|------|---------|
+| `SOUL.md` | **Start here** — Identity and personality template |
+| `AGENTS.md` | Core operational guide — how your agent should behave |
+| `HEARTBEAT.md` | Proactive behaviors — what to check during idle time |
+| `MEMORY.md` | Long-term memory template — facts that persist |
+| `SUBAGENTS.md` | Sub-agent prompts — specialized roles for parallel work |
+| `PROMPTING-GUIDE.md` | **The complete guide** — how to prompt like this |
+| `memory/TEMPLATE.md` | Daily log template — raw session notes |
 
 ---
 
 ## Quick Start
 
-### Option 1: Copy-paste into your workspace
-
-1. Create these files in your Claude workspace:
-   - `AGENTS.md` — Operational guide (how Claude should behave)
-   - `HEARTBEAT.md` — Proactive check-in behaviors
-   - `MEMORY.md` — Long-term memory storage
-   - `memory/` folder — Daily logs
-
-2. Copy the templates from this repo into those files.
-
-3. Start a conversation with Claude and reference the files.
-
-### Option 2: Clone and customize
+1. **Clone this repo** into your OpenClaw workspace
+2. **Read `PROMPTING-GUIDE.md`** — understand the patterns
+3. **Customize `SOUL.md`** — give your agent a name and personality
+4. **Set up `MEMORY.md`** — add your project context
+5. **Start collaborating** — your agent reads these files automatically
 
 ```bash
 git clone https://github.com/Jacknelson6/nightcrew.git
-cd nightcrew
-# Customize the templates for your needs
-# Move to your Claude workspace
 ```
-
----
-
-## The Files
-
-| File | Purpose |
-|------|---------|
-| `AGENTS.md` | Core operational guide — tells Claude how to behave, when to act vs. ask, safety boundaries |
-| `HEARTBEAT.md` | Proactive behaviors — what to check during idle time, when to reach out |
-| `MEMORY.md` | Long-term memory template — facts, preferences, lessons learned |
-| `SUBAGENTS.md` | Sub-agent prompt templates — specialized roles for parallel work |
-| `memory/YYYY-MM-DD.md` | Daily log template — raw session notes |
 
 ---
 
 ## Core Concepts
 
-### 1. Memory Persistence
+### 1. Your Agent Has a Soul
 
-Claude wakes up fresh each session. These files ARE its memory:
+`SOUL.md` defines WHO your agent is — not just what it does:
+- A name
+- A personality
+- Core values
+- Boundaries
+
+An agent with identity makes better decisions than one following generic instructions.
+
+### 2. Memory Lives in Files
+
+Your agent wakes up fresh each session. These files ARE its memory:
 
 ```
-MEMORY.md          → Long-term (curated facts, preferences, lessons)
-memory/2024-01-15.md → Daily logs (raw notes from each session)
+MEMORY.md              → Long-term (curated facts, preferences)
+memory/2024-01-15.md   → Daily logs (raw session notes)
 ```
 
-**Key insight:** If you want Claude to remember something, it must be written to a file. "Mental notes" don't survive restarts.
+**Key insight:** "Mental notes" don't survive restarts. Files do.
 
-### 2. Proactive Heartbeats
+### 3. Proactive, Not Reactive
 
-Instead of only responding when prompted, Claude can check in periodically:
-
+Configure heartbeat intervals. Instead of waiting for instructions:
 - Check project status
-- Run builds/tests
-- Review memory files
-- Flag blockers or completed work
+- Run builds and tests
+- Continue work autonomously
+- Only ping you when blocked or done
 
-Configure a heartbeat interval (e.g., every 15-30 min) and Claude will use `HEARTBEAT.md` to decide what needs attention.
+### 4. Sub-Agents for Parallel Work
 
-### 3. Sub-Agent Patterns
+Spawn specialized agents:
+- **QA Engineer** — finds bugs before users do
+- **Bug Fix Engineer** — surgical fixes, no scope creep
+- **Frontend/Backend Engineer** — domain expertise
 
-For complex tasks, spawn specialized sub-agents:
-
-- **QA Engineer** — Tests flows, finds bugs
-- **Bug Fix Engineer** — Surgical fixes without refactoring
-- **Frontend/Backend Engineer** — Domain-specific implementation
-
-Each sub-agent has bounded expertise and predictable outputs. The main session acts as PM, coordinating work.
-
-### 4. Blocker Protocol
-
-Before asking for help, Claude should:
-
-1. Check available tools
-2. Check memory for prior solutions
-3. Try to solve it
-4. Only then ask
-
-This prevents learned helplessness and builds genuine capability.
+Main session acts as PM, coordinating the team.
 
 ---
 
-## Example Workflow
+## Example Night
 
-**You (9 PM):** "I'm going to bed. Keep working on the dashboard. Ping me on Telegram if you hit blockers."
+**10:00 PM** — "Keep working on the dashboard. Ping me if blocked."
 
-**Claude:**
-1. Reviews `HEARTBEAT.md` for priorities
-2. Spawns sub-agent to implement next feature
-3. Runs QA pass when feature completes
-4. Commits and pushes
-5. Updates `memory/2024-01-15.md` with progress
-6. Checks in via heartbeat — nothing blocked, continues
-7. Repeats until done or blocked
+**10:30 PM** — Agent spawns frontend sub-agent for new feature
 
-**You (7 AM):** Wake up to commits, passing tests, and a status summary.
+**11:45 PM** — Feature done, spawns QA sub-agent
+
+**12:30 AM** — QA finds 2 bugs, spawns fix agents
+
+**2:00 AM** — Fixes verified, commits pushed
+
+**7:00 AM** — You wake up to a status summary and working code
 
 ---
 
-## Customization
+## Read the Full Guide
 
-These templates are starting points. Customize for your:
-
-- **Projects** — Add project-specific context to MEMORY.md
-- **Tools** — Document CLI tools, API keys, credentials in AGENTS.md
-- **Preferences** — Communication style, working hours, alert thresholds
-- **Workflows** — Your specific deployment, testing, review processes
+`PROMPTING-GUIDE.md` contains:
+- The 4-component prompt template
+- Real examples from months of iteration
+- Common mistakes and how to avoid them
+- Memory architecture deep dive
+- Sub-agent orchestration patterns
 
 ---
 
 ## Philosophy
 
-> "Human roles shift from 'telling the agent what to do' to 'engineering conditions where good outcomes emerge naturally through iteration."
+> "Human roles shift from 'telling the agent what to do' to 'engineering conditions where good outcomes emerge naturally."
 
-The goal isn't to micromanage Claude. It's to set up systems where:
-
+You're not micromanaging. You're building systems where:
 - Context persists across sessions
 - Work continues without constant direction
 - Quality is maintained through automated checks
@@ -146,7 +131,7 @@ The goal isn't to micromanage Claude. It's to set up systems where:
 
 ## Credits
 
-Built by [@jackhnelson](https://twitter.com/jackhnelson) and Atlas (Claude) through daily collaboration shipping products.
+Built by [@jackhnels](https://twitter.com/jackhnels) and Atlas through daily collaboration shipping products with [OpenClaw](https://openclaw.ai).
 
 Inspired by [Ralph Loops](https://ghuntley.com/ralph/) by Geoffrey Huntley.
 
@@ -154,4 +139,4 @@ Inspired by [Ralph Loops](https://ghuntley.com/ralph/) by Geoffrey Huntley.
 
 ## License
 
-MIT — Use freely, modify as needed, share with others.
+MIT — Use freely, share widely.
